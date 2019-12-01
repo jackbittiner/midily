@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 
 const Recorder = () => {
-    const [audio, setAudio] = useState(null)
+    const [audioContext, setAudioContext] = useState(null)
 
      const getMicrophone = async () => {
-        const audioContext = await navigator.mediaDevices.getUserMedia({
+        const audio = await navigator.mediaDevices.getUserMedia({
           audio: true,
           video: false
         });
-        setAudio({ audioContext });
+        setAudioContext({ audio });
       }
 
     return(
