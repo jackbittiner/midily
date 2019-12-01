@@ -8,10 +8,11 @@ const Recorder = () => {
         audio: true,
         video: false
       });
-      setAudioContext({ audio });
+      setAudioContext(audio);
     }
 
     const stopMicrophone = () => {
+      audioContext.getTracks().forEach(track => track.stop());
       setAudioContext(null);
     }
 
