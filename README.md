@@ -2,6 +2,10 @@
 
 This app will convert audio input into midi
 
+## Definitely worth looking into
+
+https://github.com/grimmdude/MidiWriterJS
+
 ## Preliminary Resources
 
 https://en.wikipedia.org/wiki/MIDI#Messages
