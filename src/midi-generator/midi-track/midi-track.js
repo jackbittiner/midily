@@ -1,6 +1,8 @@
 import MidiEvent from "../midi-event/midi-event";
 import { EVENT_CODES } from "../constants/event-code-constants";
 import { DEFAULTS } from "../constants/defaults";
+import { TRACK_BYTES } from "../constants/track-bytes";
+import { stringToBytes } from "../utils/stringToBytes";
 
 class MidiTrack {
   constructor() {
@@ -26,6 +28,27 @@ class MidiTrack {
     });
     this.events.push(event);
   }
+
+  toBytes = function() {
+    let trackLength = 0;
+    let eventBytes = [];
+    let startBytes = TRACK_BYTES.START_BYTES;
+    let endBytes = TRACK_BYTES.END_BYTES;
+
+    var addEventBytes = function(event) {
+      var bytes = event.toBytes();
+      trackLength += bytes.length;
+      eventBytes.concat(eventBytes, bytes);
+    };
+
+    this.events.forEach(addEventBytes);
+
+    trackLength += endBytes.length;
+
+    const lengthBytes = stringToBytes(trackLength.toString(16), 4);
+
+    return startBytes.concat(lengthBytes, eventBytes, endBytes);
+  };
 }
 
 export default MidiTrack;
