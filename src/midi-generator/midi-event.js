@@ -1,10 +1,12 @@
 import { EVENT_CODES } from "./event-code-constants";
 
 class MidiEvent {
-  constructor({ type, channel }) {
-    if (type && channel) {
+  constructor({ type, channel, param1, param2 }) {
+    if (type && channel && param1) {
       this.setType(type);
       this.setChannel(channel);
+      this.setParam1(param1);
+      this.setParam2(param2);
     }
   }
 
@@ -22,6 +24,14 @@ class MidiEvent {
     }
 
     this.channel = channel;
+  }
+
+  setParam1(param) {
+    this.param1 = param;
+  }
+
+  setParam2(param) {
+    this.param2 = param;
   }
 }
 
