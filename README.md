@@ -6,6 +6,8 @@ This app will convert audio input into midi
 
 https://github.com/grimmdude/MidiWriterJS
 
+https://github.com/dingram/jsmidgen
+
 ## Preliminary Resources
 
 https://en.wikipedia.org/wiki/MIDI#Messages
