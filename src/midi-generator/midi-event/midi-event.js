@@ -1,4 +1,4 @@
-import { EVENT_CODES } from "./event-code-constants";
+import { EVENT_CODES } from "../constants/event-code-constants";
 
 class MidiEvent {
   constructor({ type, channel, param1, param2 }) {
