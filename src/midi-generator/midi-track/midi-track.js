@@ -16,6 +16,16 @@ class MidiTrack {
     });
     this.events.push(event);
   }
+
+  addNoteOff(channel, pitch, velocity) {
+    const event = new MidiEvent({
+      channel: channel,
+      type: EVENT_CODES.NOTE_OFF,
+      param1: pitch,
+      param2: velocity || DEFAULTS.DEFAULT_VOLUME
+    });
+    this.events.push(event);
+  }
 }
 
 export default MidiTrack;
