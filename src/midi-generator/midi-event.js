@@ -1,9 +1,10 @@
 import { EVENT_CODES } from "./event-code-constants";
 
 class MidiEvent {
-  constructor({ type }) {
-    if (type !== null || type !== undefined) {
+  constructor({ type, channel }) {
+    if (type && channel) {
       this.setType(type);
+      this.setChannel(channel);
     }
   }
 
@@ -13,6 +14,14 @@ class MidiEvent {
     }
 
     this.type = type;
+  }
+
+  setChannel(channel) {
+    if (channel < 0 || channel > 15) {
+      throw new Error(channel + " is out of bounds.");
+    }
+
+    this.channel = channel;
   }
 }
 
