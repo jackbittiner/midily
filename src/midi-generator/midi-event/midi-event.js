@@ -36,9 +36,9 @@ class MidiEvent {
   }
 
   toBytes() {
-    var byteArray = [];
+    let byteArray = [];
 
-    var typeChannelByte = this.type | (this.channel & 0xf);
+    let typeChannelByte = this.type | (this.channel & 0xf);
 
     byteArray.concat(byteArray, this.time);
     byteArray.push(typeChannelByte);
