@@ -7,6 +7,7 @@ class MidiEvent {
       this.setChannel(channel);
       this.setParam1(param1);
       this.setParam2(param2);
+      this.time = 0;
     }
   }
 
