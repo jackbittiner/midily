@@ -1,6 +1,6 @@
 import MidiEvent from "./midi-event";
 
-describe("frequencyToMidi", function() {
+describe("MidiEvent", function() {
   describe("type", function() {
     it("should error when incorrect type is input", function() {
       const constructor = () => {
