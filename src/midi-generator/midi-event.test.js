@@ -28,7 +28,7 @@ describe("MidiEvent", function() {
         expect(error.message).toBe("100 is out of bounds.");
       }
     });
-    it("should initialise with the type", function() {
+    it("should initialise with the channel", function() {
       const event = new MidiEvent({ channel: 10, type: 0x80 });
       expect(event.channel).toBe(10);
     });
