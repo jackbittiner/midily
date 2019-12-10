@@ -9,9 +9,12 @@ describe("frequencyToMidi", function() {
       try {
         constructor();
       } catch (error) {
-        console.log(error);
         expect(error.message).toBe("Trying to set an unknown event: 112");
       }
+    });
+    it("should initialise with the type", function() {
+      const event = new MidiEvent({ type: 0x80 });
+      expect(event.type).toBe(128);
     });
   });
 });
