@@ -8,6 +8,8 @@ https://github.com/grimmdude/MidiWriterJS
 
 https://github.com/dingram/jsmidgen
 
+http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html
+
 ## Preliminary Resources
 
 https://en.wikipedia.org/wiki/MIDI#Messages
