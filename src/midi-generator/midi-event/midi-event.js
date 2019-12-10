@@ -34,6 +34,20 @@ class MidiEvent {
   setParam2(param) {
     this.param2 = param;
   }
+
+  toBytes() {
+    var byteArray = [];
+
+    var typeChannelByte = this.type | (this.channel & 0xf);
+
+    byteArray.concat(byteArray, this.time);
+    byteArray.push(typeChannelByte);
+    byteArray.push(this.param1);
+    if (this.param2 !== undefined && this.param2 !== null) {
+      byteArray.push(this.param2);
+    }
+    return byteArray;
+  }
 }
 
 export default MidiEvent;
