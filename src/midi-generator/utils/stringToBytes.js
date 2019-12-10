@@ -1,4 +1,4 @@
-export function str2Bytes(str, finalBytes) {
+export function stringToBytes(str, finalBytes) {
   if (finalBytes) {
     while (str.length / 2 < finalBytes) {
       str = "0" + str;
