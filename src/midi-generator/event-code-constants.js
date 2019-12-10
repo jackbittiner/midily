@@ -1,0 +1,9 @@
+export const EVENT_CODES = {
+  NOTE_OFF: 0x80,
+  NOTE_ON: 0x90,
+  AFTER_TOUCH: 0xa0,
+  CONTROLLER: 0xb0,
+  PROGRAM_CHANGE: 0xc0,
+  CHANNEL_AFTERTOUCH: 0xd0,
+  PITCH_BEND: 0xe0
+};
