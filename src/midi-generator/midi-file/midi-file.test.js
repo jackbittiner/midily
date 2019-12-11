@@ -11,14 +11,13 @@ describe("MidiFile", function() {
 
       track.addNote(1, 0x3c, 64);
 
-      track.addNote(1, 0x3e, 64);
-      track.addNote(1, 0x40, 64);
-      track.addNote(1, 0x41, 64);
-      track.addNote(1, 0x43, 64);
-      track.addNote(1, 0x45, 64);
-      track.addNote(1, 0x47, 64);
-      track.addNote(1, 0x48, 64);
-      console.log(file.toBytes());
+      track.addNote(1, 22, 64);
+      track.addNote(1, 107, 64);
+      track.addNote(1, 56, 64);
+      track.addNote(1, 92, 64);
+      track.addNote(1, 71, 64);
+      track.addNote(1, 89, 64);
+      track.addNote(1, 33, 64);
 
       fs.writeFileSync("test.mid", file.toBytes(), "binary");
     });
