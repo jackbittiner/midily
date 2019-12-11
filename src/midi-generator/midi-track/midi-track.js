@@ -38,7 +38,7 @@ class MidiTrack {
     }
   }
 
-  toBytes = function() {
+  toBytes() {
     let trackLength = 0;
     let eventBytes = [];
     let startBytes = TRACK_BYTES.START_BYTES;
@@ -57,7 +57,7 @@ class MidiTrack {
     const lengthBytes = stringToBytes(trackLength.toString(16), 4);
 
     return startBytes.concat(lengthBytes, eventBytes, endBytes);
-  };
+  }
 }
 
 export default MidiTrack;
