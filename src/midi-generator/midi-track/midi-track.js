@@ -45,7 +45,7 @@ class MidiTrack {
     let endBytes = TRACK_BYTES.END_BYTES;
 
     const addEventBytes = event => {
-      var bytes = event.toBytes();
+      const bytes = event.toBytes();
       trackLength += bytes.length;
       eventBytes.push.apply(eventBytes, bytes);
     };

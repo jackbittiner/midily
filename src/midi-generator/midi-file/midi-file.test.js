@@ -1,6 +1,6 @@
 import MidiFile from "./midi-file";
 import MidiTrack from "../midi-track/midi-track";
-var fs = require("fs");
+const fs = require("fs");
 
 describe("MidiFile", function() {
   describe("test run", function() {
