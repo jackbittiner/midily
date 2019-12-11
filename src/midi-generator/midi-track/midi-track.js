@@ -31,6 +31,13 @@ class MidiTrack {
     this.events.push(event);
   }
 
+  addNote(channel, pitch, dur, time) {
+    this.addNoteOn(channel, pitch, time, DEFAULTS.DEFAULT_VOLUME);
+    if (dur) {
+      this.addNoteOff(channel, pitch, dur, DEFAULTS.DEFAULT_VOLUME);
+    }
+  }
+
   toBytes = function() {
     let trackLength = 0;
     let eventBytes = [];
