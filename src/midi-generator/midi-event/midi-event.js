@@ -1,14 +1,19 @@
 import { EVENT_CODES } from "../constants/event-code-constants";
+import { translateTickTime } from "../utils/translate-tick-time";
 
 class MidiEvent {
-  constructor({ type, channel, param1, param2 }) {
+  constructor({ type, channel, param1, param2, time }) {
     if (type && channel && param1) {
       this.setType(type);
       this.setChannel(channel);
       this.setParam1(param1);
       this.setParam2(param2);
-      this.time = 0;
+      this.setTime(time);
     }
+  }
+
+  setTime(ticks) {
+    this.time = translateTickTime(ticks || 0);
   }
 
   setType(type) {
