@@ -45,7 +45,7 @@ class MidiEvent {
 
     let typeChannelByte = this.type | (this.channel & 0xf);
 
-    byteArray.concat(byteArray, this.time);
+    byteArray.push.apply(byteArray, this.time);
     byteArray.push(typeChannelByte);
     byteArray.push(this.param1);
     if (this.param2 !== undefined && this.param2 !== null) {
