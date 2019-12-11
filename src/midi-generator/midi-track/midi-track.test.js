@@ -4,7 +4,7 @@ describe("MidiTrack", function() {
   describe("addNoteOn", function() {
     it("should add note on event with specified params", function() {
       const track = new MidiTrack();
-      track.addNoteOn(1, 69, 50);
+      track.addNoteOn(1, 69, 50, 50);
       expect(track.events[0].param2).toStrictEqual(50);
     });
     it("should default velocity to 90 if not given", function() {
@@ -16,12 +16,12 @@ describe("MidiTrack", function() {
   describe("addNoteOff", function() {
     it("should add note on event with specified params", function() {
       const track = new MidiTrack();
-      track.addNoteOff(1, 69, 50);
+      track.addNoteOff(1, 69, 50, 50);
       expect(track.events[0].param2).toStrictEqual(50);
     });
     it("should default velocity to 90 if not given", function() {
       const track = new MidiTrack();
-      track.addNoteOff(1, 69);
+      track.addNoteOff(1, 69, 10);
       expect(track.events[0].param2).toStrictEqual(90);
     });
   });

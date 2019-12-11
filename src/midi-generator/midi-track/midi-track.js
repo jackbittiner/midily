@@ -9,22 +9,24 @@ class MidiTrack {
     this.events = [];
   }
 
-  addNoteOn(channel, pitch, velocity) {
+  addNoteOn(channel, pitch, time, velocity) {
     const event = new MidiEvent({
       channel: channel,
       type: EVENT_CODES.NOTE_ON,
       param1: pitch,
-      param2: velocity || DEFAULTS.DEFAULT_VOLUME
+      param2: velocity || DEFAULTS.DEFAULT_VOLUME,
+      time: time || 0
     });
     this.events.push(event);
   }
 
-  addNoteOff(channel, pitch, velocity) {
+  addNoteOff(channel, pitch, time, velocity) {
     const event = new MidiEvent({
       channel: channel,
       type: EVENT_CODES.NOTE_OFF,
       param1: pitch,
-      param2: velocity || DEFAULTS.DEFAULT_VOLUME
+      param2: velocity || DEFAULTS.DEFAULT_VOLUME,
+      time: time || 0
     });
     this.events.push(event);
   }
